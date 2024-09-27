@@ -48,7 +48,7 @@ def barco_valido(barco, tablero):
             return False
     return True
 
-# Coloca varios barcos en el tablero hasta que sean validos
+# Coloca los barcos en el tablero hasta que sean validos
 def colocar_barcos(tablero):
     lista_esloras = [2, 2, 2, 3, 3, 4]
     for eslora in lista_esloras:
