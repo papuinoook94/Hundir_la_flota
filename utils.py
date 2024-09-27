@@ -13,7 +13,7 @@ def colocar_barco(barco, tablero):
             tablero[fila, col] = 'O'
     return tablero
 
-# Dispara a una casilla, importante para luego cambio de turno
+# Dispara a una casilla, importante para luego el cambio de turno
 def disparar(casilla, tablero):
     if tablero[casilla] == "O":
         print("Tocado")
