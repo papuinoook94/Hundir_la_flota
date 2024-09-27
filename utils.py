@@ -2,11 +2,11 @@ import numpy as np
 import random
 
 # Crea un tablero fijo rellenado de ("_")
-def crear_tablero(tamaño=10):
-    tablero = np.full((tamaño, tamaño), "_")
+def crear_tablero(t=10):
+    tablero = np.full((t, t), "_")
     return tablero
 
-# Coloca un barco en el tablero comprobando que no haya otro
+# Coloca un barco en el tablero  comprobando que no haya otro
 def colocar_barco(barco, tablero):
     for (fila, col) in barco:
         if tablero[fila, col] == '_':  # Solo coloca el barco si es agua
@@ -28,15 +28,15 @@ def disparar(casilla, tablero):
         return "Ya disparado"
 
 # Crea un barco de manera aleatoria 
-def crear_barco(eslora, tamaño_tablero=10):
+def crear_barco(eslora, t=10):
     orientacion = random.choice(['H', 'V'])  # H para horizontal, V para vertical
     if orientacion == 'H':
-        fila = random.randint(0, tamaño_tablero - 1)
-        col = random.randint(0, tamaño_tablero - eslora)
+        fila = random.randint(0, t- 1)
+        col = random.randint(0, t- eslora)
         barco = [(fila, c) for c in range(col, col + eslora)]
     else:
-        fila = random.randint(0, tamaño_tablero - eslora)
-        col = random.randint(0, tamaño_tablero - 1)
+        fila = random.randint(0, t- eslora)
+        col = random.randint(0, t - 1)
         barco = [(f, col) for f in range(fila, fila + eslora)]
     
     return barco
